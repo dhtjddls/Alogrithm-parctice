@@ -1,0 +1,5 @@
+n = int(input())
+hom = list(map(int, input().split()))
+hom.sort()
+mid = (hom[(n-1)//2])
+print(mid)
