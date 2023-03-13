@@ -1,10 +1,18 @@
-sik = input().split('-') # '-'를 기준으로 나누어 준다.
-s = 0 # 가장 작은 값을 저장할 변수 만들어 주고
+import sys
 
-for i in sik[0].split('+'): # 첫번째 '-' 를 만나기 전의 모든 요소들은 결국 더해야 한다. 뺄 수가 없응께
-    s += int(i) # 첫번째 '-' 이전 까지의 수 더해주기
+input = sys.stdin.readline
 
-for i in sik[1:]: # 첫번째 '-'를 만난 이후에 만나는 모든 수들은 모드 빼기가 가능하다. (괄호를 잘치면) 때문에 모두 빼주는게 제일 작은 값이다.
-    for j in i.split('+'):  # "+"로 서로 붙어있는 값들을(ex) 10+20같이..) 하나의 값으로 띄어주고
-        s -= int(j) # 각각의 값을 빼준다.
-print(s)
+# 20 + 40 - 60 + 25 + 66 - 30 + 100
+# - 뒤에는 다더해야되 다음 - 전까지 
+# - 기준으로 split 해주고 -> 대총 콘솔 찍으면서 연산해주면 될거같은데용
+
+sik = input()
+#1. 마이너스 기준으로 스플릿한다
+result=sik.split('-')
+#['55+30' / '50+40', '40', '40+50']
+
+fin=sum(list(map(int, result[0].split('+'))))
+for i in range(1,len(result)): 
+    fin -= sum(list(map(int, result[i].split('+'))))
+
+print(fin)

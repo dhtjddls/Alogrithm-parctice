@@ -11,3 +11,6 @@ for i in range(n):
             print('0')  
     else:
         heapq.heappush(heap, val)
+        
+
+

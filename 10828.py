@@ -17,3 +17,9 @@ for i in range(N):
     else:
         if stack: print(stack[-1])
         else: print(-1)
+        
+        
+        
+        
+        
+        
