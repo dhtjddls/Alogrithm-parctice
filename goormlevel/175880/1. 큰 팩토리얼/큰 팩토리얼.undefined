@@ -1,0 +1,7 @@
+
+
+n = int(input())
+fac_rlt = 1
+for i in range(1, n+1):
+	fac_rlt *= i
+print(fac_rlt % 1000000007)
