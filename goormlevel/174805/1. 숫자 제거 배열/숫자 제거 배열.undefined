@@ -1,0 +1,8 @@
+n, k = map(int, input().split())
+input_list = list(map(str, input().split()))
+answer_list = []
+
+for num in input_list:
+	if str(k) not in num:
+		answer_list.append(int(num))
+print(len(answer_list))
