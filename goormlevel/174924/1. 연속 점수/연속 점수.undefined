@@ -1,0 +1,19 @@
+n = int(input())
+quest = list(map(int, input().split()))
+quest.append(0)
+posible_point = []
+
+cnt = quest[0]
+for i in range(n):
+	pls_pointer = i + 1
+	
+	if quest[i] + 1 == quest[pls_pointer]:
+		cnt += quest[pls_pointer]
+	else:
+		posible_point.append(cnt)
+		cnt = quest[i+1]
+	
+	
+print(max(posible_point))
+
+	
