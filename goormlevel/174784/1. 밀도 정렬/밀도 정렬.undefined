@@ -1,0 +1,9 @@
+n = int(input())
+autom_list = []
+for i in range(n):
+	a, b = map(int, input().split())
+	autom = [a, float(a/b), i+1]
+	# 무게, 밀도, 번호
+	autom_list.append(autom)
+autom_list = sorted(autom_list, key = lambda x: (x[1], x[0],-x[2]))
+print(autom_list[-1][-1])
