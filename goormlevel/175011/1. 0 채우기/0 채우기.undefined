@@ -1,0 +1,12 @@
+n = int(input())
+grid = []
+cnt = 0
+for _ in range(n):
+	grid.append(list(map(int, input().split(' '))))
+for i in range(n):
+	for j in range(n):
+		if grid[i][j] == 0:
+			cnt += sum(grid[i])
+			for k in range(n):
+				cnt += grid[k][j]
+print(cnt)
